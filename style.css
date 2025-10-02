@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
 
 :root {
-  --fondo: #f8f9fa;
-  --rosa: #f2b5d4;
+  --fondo: #f8f3ed;        /* Beige tenue de fondo */
+  --rosa-suave: #f2b5d4;
   --rosa-oscuro: #d980aa;
-  --texto: #333;
+  --texto: #4b3d3d;
+  --blanco: #ffffff;
 }
 
 * {
@@ -18,46 +19,82 @@ body {
   background-color: var(--fondo);
   color: var(--texto);
   text-align: center;
+  line-height: 1.5;
   padding-bottom: 50px;
 }
 
-/* ENCABEZADO */
+/* ✨ Encabezado romántico */
 .header {
-  background: linear-gradient(135deg, var(--rosa), var(--rosa-oscuro));
-  color: white;
-  padding: 30px 15px;
+  background: linear-gradient(135deg, var(--rosa-suave), var(--rosa-oscuro));
+  color: var(--blanco);
+  padding: 40px 15px 30px;
   border-radius: 0 0 25px 25px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+.header::after {
+  content: "♥";
+  font-size: 28px;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--fondo);
+  padding: 8px;
+  border-radius: 50%;
+  color: var(--rosa-oscuro);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .header h1 {
-  font-size: 1.8rem;
-  margin-bottom: 5px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  margin-bottom: 8px;
 }
 
 .subtext {
   font-size: 1rem;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
-/* CONTADOR */
+/* 📅 Contador */
 .contador {
-  margin: 40px auto;
+  margin: 50px auto 30px;
+  padding: 20px;
+  background: var(--blanco);
+  max-width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+  position: relative;
+}
+
+.contador::before {
+  content: "💞";
+  font-size: 22px;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--fondo);
+  border-radius: 50%;
+  padding: 5px;
 }
 
 .contador h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--rosa-oscuro);
 }
 
 .contador-numero {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: var(--rosa-oscuro);
-  margin-bottom: 5px;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--texto);
+  margin-bottom: 4px;
 }
 
-/* CARTAS */
+/* 💌 Cartas románticas */
 .cartas {
   margin: 40px auto;
   max-width: 700px;
@@ -65,27 +102,49 @@ body {
 }
 
 .cartas h2 {
-  margin-bottom: 20px;
   font-size: 1.7rem;
+  color: var(--rosa-oscuro);
+  margin-bottom: 20px;
+  font-family: 'Great Vibes', cursive;
 }
 
 .carta {
-  background: white;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  background: var(--blanco);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
 }
 
 .carta h3 {
   color: var(--rosa-oscuro);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
 }
 
-/* CORAZONES */
+.carta p {
+  font-size: 1rem;
+  color: #5a4d4d;
+}
+
+/* 💝 Juego de corazones */
 .juego {
   margin: 40px auto;
+  padding: 0 15px;
+}
+
+.juego h2 {
+  font-size: 1.6rem;
+  color: var(--rosa-oscuro);
+  font-family: 'Great Vibes', cursive;
+  margin-bottom: 10px;
 }
 
 .corazones-container {
@@ -99,14 +158,15 @@ body {
 .corazon {
   width: 60px;
   height: 60px;
-  background-color: var(--rosa);
+  background-color: var(--rosa-suave);
   clip-path: polygon(50% 0%, 100% 38%, 79% 100%, 50% 80%, 21% 100%, 0% 38%);
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .corazon:hover {
-  transform: scale(1.2);
+  transform: scale(1.2) rotate(5deg);
   background-color: var(--rosa-oscuro);
 }
 
@@ -116,4 +176,9 @@ body {
   font-weight: 500;
   color: var(--rosa-oscuro);
   min-height: 24px;
+  font-style: italic;
+  transition: opacity 0.3s ease;
 }
+
+/* ✨ Animación inicial */
+.
